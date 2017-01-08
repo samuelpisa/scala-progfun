@@ -1,5 +1,7 @@
 package recfun
 
+import scala.annotation.tailrec
+
 object Main {
   def main(args: Array[String]) {
     println("Pascal's Triangle")
@@ -20,6 +22,7 @@ object Main {
    * Exercise 2
    */
   def balance(chars: List[Char]): Boolean = {
+    @tailrec
     def balanced(charList: List[Char], open: Int): Boolean =
       charList match {
         case Nil => open == 0
