@@ -19,11 +19,7 @@ object FunSets {
   /**
     * Returns the set of the one given element.
     */
-  def singletonSet(elem: Int): Set = {
-    def instance(e: Int) = elem == e
-
-    instance
-  }
+  def singletonSet(elem: Int): Set = (e: Int) => elem == e
 
   /**
     * Returns the union of the two given sets,
@@ -75,7 +71,7 @@ object FunSets {
   /**
     * Returns a set transformed by applying `f` to each element of `s`.
     */
-  def map(s: Set, f: Int => Int): Set = (e:Int) => exists(s, (x => f(x) == e))
+  def map(s: Set, f: Int => Int): Set = (e:Int) => exists(s, x => f(x) == e)
   
   /**
    * Displays the contents of a set
